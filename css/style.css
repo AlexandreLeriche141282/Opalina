@@ -282,12 +282,16 @@ h3 {
 .hero-cover img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 410px;
+  object-fit: cover;
+  object-position: center 40%;
 }
 
 @media (min-width: 800px) {
   .hero-cover img {
-    width: min(100%, 42rem);
+    width: min(100%, 36rem);
+    height: auto;
+    object-fit: contain;
     margin-inline: auto;
   }
 }
@@ -429,7 +433,7 @@ h3 {
 
 .promises {
   list-style: none;
-  padding: 1rem 0;
+  padding: 0.35rem 0;
   margin: 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -438,9 +442,13 @@ h3 {
 
 .promises li {
   text-align: center;
-  padding: 0.35rem 0.6rem;
-  font-size: 0.92rem;
-  letter-spacing: 0.04em;
+  padding: 1.15rem 0.7rem;
+  font-family: var(--display);
+  font-size: clamp(1.7rem, 2.5vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--titre);
 }
 
 .promises li + li {
@@ -928,6 +936,11 @@ textarea {
   .promises li + li {
     border-left: 0;
     border-top: 1px solid var(--line);
+  }
+
+  .promises li {
+    font-size: 2rem;
+    padding: 0.95rem 0.4rem;
   }
 
   .section-head,
